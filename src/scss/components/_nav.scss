@@ -1,0 +1,69 @@
+@use '../util' as u;
+
+.nav {
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    @media (min-width: u.em(1110)) {
+        display: none; // روی دسکتاپ مخفی باشه
+    }
+  }
+
+  &__open[aria-expanded='true'] {
+    ~ .nav__content {
+      transform: translateX(0);
+
+      @media (prefers-reduced-motion) {
+        opacity: 1;
+      }
+    }
+
+    ~ .nav__overlay {
+      opacity: 0.5;
+      pointer-events: auto; // overlay قابل کلیک میشه
+    }
+  }
+
+  &__content {
+    @media (max-width: u.em(1110)) {
+      display: block; // قبلا none بود
+      position: fixed;
+      inset: 0 0 0 u.rem(120);
+      background-color: var(--c-white);
+      padding: u.rem(30);
+      transform: translateX(100vw);
+      transition: transform 500ms ease-in-out; // قبلا translate بود
+      z-index: 1000;
+    }
+
+    @media (prefers-reduced-motion) {
+      transform: none;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
+    }
+  }
+
+  &__close {
+    display: block;
+    margin-inline-start: auto;
+    margin-block-end: u.rem(86);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__overlay {
+    display: block; // همیشه نمایش باشه، opacity کنترل می‌کنه
+    position: fixed;
+    inset: 0;
+    background-color: var(--c-blue);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+    z-index: 999;
+  }
+}

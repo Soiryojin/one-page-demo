@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Vazirmatn:wght@100..900&display=swap" 
+      rel="stylesheet">
+  </head>
+
+  <body id="body">
+    <header class="header wrapper">
+      <a href="/">
+        <img class="header__logo" src="/images/logo.svg" alt="Homepage" width="64" height="40">
+      </a>
+
+      <nav aria-label="Site"  class="nav"> 
+        <button id="btnOpen" class="nav__open" aria-labelledby="nav-label" aria-expanded="false">
+          <!-- Hamburger SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+            <rect y="4" width="24" height="2" fill="currentColor"/>
+            <rect y="11" width="24" height="2" fill="currentColor"/>
+            <rect y="18" width="24" height="2" fill="currentColor"/>
+          </svg>
+          <span id="nav-label" hidden>Navigation</span>
+        </button>
+
+        <div class="nav__overlay" aria-hidden="true"></div>
+        
+        <div class="nav__content" role="dialog" aria-labelledby="nav-label">
+          <button id="btnClose" class="nav-close" aria-label="Close">
+            <!-- Close Btn -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
+              <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+          <ul class="header__links">
+            <li>
+              <a class="header__link" href="#">Home</a>
+            </li>
+            <li>
+              <a class="header__link" href="#">New</a>
+            </li>
+            <li>
+              <a class="header__link" href="#">Popular</a>
+            </li>
+            <li>
+              <a class="header__link" href="#">Trending</a>
+            </li>
+            <li>
+              <a class="header__link" href="#">Categories</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="wrapper grid">
+      <section class="feature">
+        <picture class="feature__picture">
+          <source 
+            media="(min-width: 700px)"
+            srcset="/images/feature-desktop.jpg 1x, /images/feature-desktop-2x.jpg 2x">
+          <img
+            class="feature__image" 
+            src="/images/feature-mobile.jpg" 
+            alt="colorful tech blocks on a desk">
+        </picture>
+
+        <h1 class="feature__headline">The Rise of Artificial Intelligence in Everyday Life</h1>
+        
+        <div class="feature__description">        
+          <p>
+            AI is becoming part of our daily routines—from smart assistants to automated recommendations. 
+            Understanding its impact is essential for individuals and businesses alike.
+          </p>
+        </div>
+
+        <a class="feature__button" href="#">Read More</a>
+      </section>
+
+
+      <section class="new">
+        <h2 class="new__title">New</h2>
+
+        <article class="new__post">
+          <h3><a class="new__headline" href="#">Hydrogen VS Electric Cars</a></h3>
+          <p class="new__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+        
+        <article class="new__post">
+          <h3><a class="new__headline" href="#">Some Headline Second</a></h3>
+          <p class="new__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+
+        <article class="new__post">
+          <h3><a class="new__headline" href="#">Some Headline Third</a></h3>
+          <p class="new__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+      </section>
+
+      <section class="blog">
+
+        <article class="blog__item">
+          <img src="/images/news-1.jpg" alt="retro computer, keyboard, cassette tapes on a desk" class="blog__image">
+          <div class="blog__number">01</div>
+          <h3 class="blog__headline"><a href="#">Reviving Retro PCs</a></h3>
+          <p class="blog__description">What happens when old PCs are given modern upgrades?</p>
+        </article>
+
+        <article class="blog__item">
+          <img src="/images/news-2.jpg" alt="keyboard with red backlighting" class="blog__image">
+          <div class="blog__number">02</div>
+          <h3 class="blog__headline"><a href="#">Top 10 Laptops of 2022</a></h3>
+          <p class="blog__description">Our best picks for various needs and budgets.</p>
+        </article>
+
+        <article class="blog__item">
+          <img src="/images/news-3.jpg" alt="game controller in the air above a hand" class="blog__image">
+          <div class="blog__number">03</div>
+          <h3 class="blog__headline"><a href="#">The Growth of Gaming</a></h3>
+          <p class="blog__description">How the pandemic has sparked fresh opportunities.</p>
+        </article>
+        
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
